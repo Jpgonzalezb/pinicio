@@ -1,17 +1,58 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="secondary">
     <ion-title>
-      Contact
+      Tips
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
+    <ion-list-header>Evita generar residuos, cuidemos el planeta</ion-list-header>
   </ion-list>
+  <div padding>
+    <ion-segment color="secondary" [(ngModel)]="reciclar">
+      <ion-segment-button value="hogar">Hogar</ion-segment-button>
+      <ion-segment-button value="comunidad">Comunidad</ion-segment-button>
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="reciclar">
+    <ion-list *ngSwitchCase="'hogar'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/3rs.png" >
+        </ion-thumbnail>
+        <h5>Reducir= Disminuir la cantidad de residuos</h5>
+        <h5>Reutilizar= Uso del producto repetidamente, hasta el fin de su ciclo de vida</h5>
+        <h5>Reciclar= Clasificación y disposición de los residuos</h5>
+      </ion-item>
+      <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/imgs/cuaderno.jpg" >
+          </ion-thumbnail>
+          <h5>Utilice las partes de atrás de las hojas impresas que está en blanco para tomar notas</h5>
+        </ion-item>
+        <ion-item>
+            <ion-thumbnail item-start>
+              <img src="assets/imgs/tinta.jpg" >
+            </ion-thumbnail>
+            <h5>Use cartuchos de tinta reusables.</h5>
+          </ion-item>
+          <ion-item>
+          <ion-thumbnail item-start>
+              <img src="assets/imgs/correo.jpg" >
+            </ion-thumbnail>
+            <h5>La ropa rota la puedes usar para hacer manualidades .</h5>
+          </ion-item>
+          <ion-item>
+            <ion-thumbnail item-start>
+            <img src="assets/imgs/ropamanu.jpg" >
+          </ion-thumbnail>
+          <h5>Pida que le manden correos en vez de impresiones.</h5>
+        </ion-item>
+    </ion-list> 
+
+  </div>
+
+
 </ion-content>
